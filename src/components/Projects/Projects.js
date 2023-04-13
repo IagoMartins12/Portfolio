@@ -2,12 +2,11 @@ import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import ProjectCard from "./ProjectCards";
 import Particle from "../Particle";
-import leaf from "../../Assets/Projects/leaf.png";
-import emotion from "../../Assets/Projects/emotion.png";
-import editor from "../../Assets/Projects/codeEditor.png";
-import chatify from "../../Assets/Projects/chatify.png";
-import suicide from "../../Assets/Projects/suicide.png";
-import bitsOfCode from "../../Assets/Projects/blog.png";
+import spaceX from "../../Assets/Projects/spacex.png";
+import todoList from "../../Assets/Projects/todolist.png";
+import axon from "../../Assets/Projects/axon.png";
+import devflix from "../../Assets/Projects/Devflix.png";
+import devblog from "../../Assets/Projects/Devblog.png"
 
 function Projects() {
   return (
@@ -23,38 +22,58 @@ function Projects() {
         <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
           <Col md={4} className="project-card">
             <ProjectCard
-              imgPath={chatify}
+              imgPath={axon}
               isBlog={false}
-              title="Chatify"
-              description="Personal Chat Room or Workspace to share resources and hangout with friends build with react.js, Material-UI, and Firebase. Have features which allows user for realtime messaging, image sharing as well as supports reactions on messages."
-              ghLink="https://github.com/soumyajit4419/Chatify"
-              demoLink="https://chatify-49.web.app/"
-            />
-          </Col>
-
-
-          <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={editor}
-              isBlog={false}
-              title="Editor.io"
-              description="Online code and markdown editor build with react.js. Online Editor which supports html, css, and js code with instant view of website. Online markdown editor for building README file which supports GFM, Custom Html tags with toolbar and instant preview.Both the editor supports auto save of work using Local Storage"
-              ghLink="https://github.com/soumyajit4419/Editor.io"
-              demoLink="https://editor.soumya-jit.tech/"              
+              title="Axon"
+              description="The axon project is a single page application developted for Axon content. The tecnologies used to this project is the classic triad HTML, CSS and JavaScript. I used slickerJs with Jquery to make the mobile carrousel to."
+              ghLink="https://github.com/IagoMartins12/Axon"
+              demoLink="https://iagomartins12.github.io/Axon/"              
             />
           </Col>
 
           <Col md={4} className="project-card">
             <ProjectCard
-              imgPath={leaf}
+              imgPath={todoList}
               isBlog={false}
-              title="Plant AI"
-              description="Used the plant disease dataset from Kaggle and trained a image classifer model using 'PyTorch' framework using CNN and Transfer Learning with 38 classes of various plant leaves. The model was successfully able to detect diseased and healthy leaves of 14 unique plants. I was able to achieve an accuracy of 98% by using Resnet34 pretrained model."
-              ghLink="https://github.com/soumyajit4419/Plant_AI"
-              demoLink="https://plant49-ai.herokuapp.com/"
+              title="To-do-list"
+              description="The todo-list is a ESJ(Embedded JavaScript templates) application, developted using NodeJs and Express. This project is just a exercise to pratic back-end technologies."
+              ghLink="https://github.com/IagoMartins12/to-do-list"
             />
           </Col>
 
+          <Col md={4} className="project-card">
+            <ProjectCard
+              imgPath={spaceX}
+              isBlog={false}
+              title="SpaceX"
+              description = "This application, developed based on the SpaceX website, is a web page built using CSS, Bootstrap, and SASS. The application offers a sleek and modern user interface with optimized layouts and styles for various screen sizes."
+              ghLink="https://github.com/IagoMartins12/SpaceX"
+              demoLink="https://iagomartins12.github.io/SpaceX/"
+            />
+          </Col>
+
+          <Col md={4} className="project-card">
+            <ProjectCard
+              imgPath={devflix}
+              isBlog={false}
+              title="DevFlix"
+              description = "DevFlix is a full-stack application based on Netflix that allows users to browse and stream a variety of courses focused on programming. The application was developed using Postgres, Sequelize, and Node.js for the backend, and SASS, React, Next.js, and Bootstrap for the frontend, and TypeScript for both. "
+              ghLink="https://github.com/IagoMartins12/SpaceX"
+              demoLink="https://iagomartins12.github.io/SpaceX/"
+            />
+          </Col>
+
+          
+          <Col md={4} className="project-card">
+            <ProjectCard
+              imgPath={devblog}
+              isBlog={false}
+              title="DevBlog"
+              description = "DevBlog is a blog application developed using NextJS, React, Tailwind, and Typescript. The application provides a modern and responsive user interface, with optimized layouts and styles for various screen sizes. The use of NextJS and React provides efficient rendering and optimized performance."
+              ghLink="https://github.com/IagoMartins12/SpaceX"
+              demoLink="https://iagomartins12.github.io/SpaceX/"
+            />
+          </Col>
         </Row>
       </Container>
     </Container>
