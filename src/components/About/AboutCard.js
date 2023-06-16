@@ -8,8 +8,8 @@ function AboutCard() {
       <Card.Body>
         <blockquote className="blockquote mb-0">
           <p style={{ textAlign: "justify" }}>
-            Hi Everyone, I am <span className="purple">Iago martins </span>
-            from <span className="purple"> São paulo, Brazil.</span>
+            Hi Everyone, I am <span className="purple">Iago Martins </span>
+            from <span className="purple"> São Paulo, Brazil.</span>
             <br />I am a junior Software Engineer, actualy working at Pmovil LTDA.
             <br /> Check my resume to get to know my skills better :D
             <br />
@@ -32,7 +32,7 @@ function AboutCard() {
           </ul>
 
           <p style={{ color: "rgb(155 126 172)" }}>
-            "Strive to build things that make a difference!"{" "}
+            "Inspire to code the future and shape a better tomorrow!."{" "}
           </p>
           <footer className="blockquote-footer">Iago</footer>
         </blockquote>

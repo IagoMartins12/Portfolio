@@ -4,7 +4,7 @@ import {
   SiLinux,
   SiVisualstudiocode,
   SiPostman,
-  SiHeroku,
+  SiGitlab,
   SiVercel,
 } from "react-icons/si";
 
@@ -24,7 +24,7 @@ function Toolstack() {
         <SiVercel />
       </Col>
       <Col xs={4} md={2} className="tech-icons">
-        <SiHeroku />
+        < SiGitlab />
       </Col>
     </Row>
   );

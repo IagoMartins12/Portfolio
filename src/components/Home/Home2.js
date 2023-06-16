@@ -23,8 +23,8 @@ function Home2() {
               <br />
               <br />I am fluent in 
               <i>
-                <b className="purple"> JavaScript stack </b> and also have some experience in <i>
-                    <b className="purple"> C# and Java </b>
+                <b className="purple"> MERN stack </b> and also have some experience in <i>
+                    <b className="purple"> C# and PHP </b>
                 </i>
               </i>
               <br />

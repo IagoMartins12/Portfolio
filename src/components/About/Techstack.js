@@ -1,6 +1,5 @@
 import React from "react";
 import { Col, Row } from "react-bootstrap";
-import { CgCPlusPlus } from "react-icons/cg";
 import { TbCSharp } from "react-icons/tb";
 import {
   DiJavascript1,
@@ -8,14 +7,13 @@ import {
   DiNodejs,
   DiMongodb,
   DiGit,
-  DiMsqlServer
 } from "react-icons/di";
 import {
-  SiPytorch,
-  SiFirebase,
+
   SiNextdotjs,
   SiTypescript,
-  SiWordpress
+  SiPrisma, 
+  SiTailwindcss,
 } from "react-icons/si";
 
 function Techstack() {
@@ -43,13 +41,13 @@ function Techstack() {
         <DiGit />
       </Col>
       <Col xs={4} md={2} className="tech-icons">
-        <SiWordpress />
+        <SiPrisma />
       </Col>
       <Col xs={4} md={2} className="tech-icons">
         <SiTypescript />
       </Col>
       <Col xs={4} md={2} className="tech-icons">
-        <DiMsqlServer />
+        <SiTailwindcss />
       </Col>
     </Row>
   );
