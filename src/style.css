@@ -142,7 +142,7 @@ button:focus {
 
 @media (max-width: 767px) {
   .navbar {
-    padding: 1rem 2rem !important;
+    padding: 0 2rem !important;
     font-size: 1.4rem !important;
     background-color: #181a27 !important;
   }
@@ -740,4 +740,10 @@ button:focus {
 }
 .fork-btn-inner::after {
   display: none !important;
+}
+
+@media (max-width: 620px) {
+  .fork-btn {
+    display: none!important;
+  }
 }
