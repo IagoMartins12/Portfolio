@@ -6,7 +6,7 @@ import spaceX from "../../Assets/Projects/spacex.png";
 import axon from "../../Assets/Projects/axon.png";
 import iagoflix from "../../Assets/Projects/Iagoflix2.png";
 import iagobnb from "../../Assets/Projects/iagobnb.png"
-import devblog from "../../Assets/Projects/Devblog.png"
+import devgenius from "../../Assets/Projects/devGenius.png"
 import metaversus from "../../Assets/Projects/metaversus.png"
 
 function Projects() {
@@ -79,12 +79,11 @@ function Projects() {
 
           <Col md={4} className="project-card">
             <ProjectCard
-              imgPath={devblog}
+              imgPath={devgenius}
               isBlog={false}
-              title="DevBlog"
-              description = "DevBlog is a blog application developed using NextJS, React, Tailwind, and Typescript. The application provides a modern and responsive user interface, with optimized layouts and styles for various screen sizes. The use of NextJS and React provides efficient rendering and optimized performance."
-              ghLink="https://github.com/IagoMartins12/Airbnb"
-              demoLink="https://iagomartins12.github.io/SpaceX/"
+              title="DevGenius"
+              description = "DevGenius is a blog/Social network full-stack application, will allows users to comment posts, follow others users, chat to then and another others features. The application will be developed using Mongodb, Prisma, Tailwind, React, Next.js, TypeScript and NodeJs."
+              ghLink="https://github.com/IagoMartins12/Iagoblog"
             />
           </Col>
         </Row>

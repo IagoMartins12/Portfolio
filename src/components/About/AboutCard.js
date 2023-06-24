@@ -10,7 +10,7 @@ function AboutCard() {
           <p style={{ textAlign: "justify" }}>
             Hi Everyone, I am <span className="purple">Iago Martins </span>
             from <span className="purple"> São Paulo, Brazil.</span>
-            <br />I am a junior Software Engineer, actualy working at Pmovil LTDA.
+            <br />I am a Software Engineer, actualy working at Pmovil LTDA.
             <br /> Check my resume to get to know my skills better :D
             <br />
             <br />
