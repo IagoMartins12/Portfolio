@@ -1,20 +1,27 @@
-import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
-import {
-  AiFillGithub,
-  AiFillInstagram,
-} from "react-icons/ai";
-import { FaLinkedinIn } from "react-icons/fa";
+import React from 'react';
+import { Container, Row, Col } from 'react-bootstrap';
+import { AiFillGithub, AiFillInstagram } from 'react-icons/ai';
+import { FaLinkedinIn } from 'react-icons/fa';
+import useLanguageContext from '../Context/Language/LanguageContext';
 
 function Footer() {
   let date = new Date();
   let year = date.getFullYear();
+  const language = useLanguageContext();
+
   return (
     <Container fluid className="footer">
       <Row>
-        <Col md="4" className="footer-copywright">
-          <h3>Designed and Developed by Iago Martins</h3>
-        </Col>
+        {language.isEnglish ? (
+          <Col md="4" className="footer-copywright">
+            <h3>Designed and Developed by Iago Martins</h3>
+          </Col>
+        ) : (
+          <Col md="4" className="footer-copywright">
+            <h3>Projetado e Desenvolvido por Iago Martins</h3>
+          </Col>
+        )}
+
         <Col md="4" className="footer-copywright">
           <h3>Copyright © {year} IM</h3>
         </Col>
@@ -23,8 +30,8 @@ function Footer() {
             <li className="social-icons">
               <a
                 href="https://github.com/IagoMartins12"
-                style={{ color: "white" }}
-                target="_blank" 
+                style={{ color: 'white' }}
+                target="_blank"
                 rel="noopener noreferrer"
               >
                 <AiFillGithub />
@@ -33,8 +40,8 @@ function Footer() {
             <li className="social-icons">
               <a
                 href="https://www.linkedin.com/in/iago-martins-313838213/"
-                style={{ color: "white" }}
-                target="_blank" 
+                style={{ color: 'white' }}
+                target="_blank"
                 rel="noopener noreferrer"
               >
                 <FaLinkedinIn />
@@ -43,8 +50,8 @@ function Footer() {
             <li className="social-icons">
               <a
                 href="https://www.instagram.com/iago_martins1"
-                style={{ color: "white" }}
-                target="_blank" 
+                style={{ color: 'white' }}
+                target="_blank"
                 rel="noopener noreferrer"
               >
                 <AiFillInstagram />
