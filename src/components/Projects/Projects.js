@@ -80,6 +80,7 @@ function Projects() {
               />
             </Col>
 
+<<<<<<< HEAD
             <Col md={4} className="project-card">
               <ProjectCard
                 imgPath={devblog}
@@ -167,6 +168,19 @@ function Projects() {
           </Row>
         </Container>
       )}
+=======
+          <Col md={4} className="project-card">
+            <ProjectCard
+              imgPath={devgenius}
+              isBlog={false}
+              title="DevGenius"
+              description = "DevGenius is a blog/Social network full-stack application, will allows users to comment posts, follow others users, chat to then and another others features. The application will be developed using Mongodb, Prisma, Tailwind, React, Next.js, TypeScript and NodeJs."
+              ghLink="https://github.com/IagoMartins12/Iagoblog"
+            />
+          </Col>
+        </Row>
+      </Container>
+>>>>>>> 32259001f399fc3f8f09b4c64ba730486521354b
     </Container>
   );
 }
