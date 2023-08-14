@@ -3,12 +3,12 @@ import { Container, Row, Col } from 'react-bootstrap';
 import ProjectCard from './ProjectCards';
 import Particle from '../Particle';
 import spaceX from '../../Assets/Projects/spacex.png';
-import axon from '../../Assets/Projects/axon.png';
 import iagoflix from '../../Assets/Projects/Iagoflix2.png';
 import iagobnb from '../../Assets/Projects/iagobnb.png';
-import devblog from '../../Assets/Projects/DevBlog.png';
+import devGenius from '../../Assets/Projects/devgenius.png';
 import metaversus from '../../Assets/Projects/metaversus.png';
 import useLanguageContext from '../../Context/Language/LanguageContext';
+import hoobank from '../../Assets/Projects/hoobanks.png';
 
 function Projects() {
   const language = useLanguageContext();
@@ -27,17 +27,6 @@ function Projects() {
           <Row style={{ justifyContent: 'center', paddingBottom: '10px' }}>
             <Col md={4} className="project-card">
               <ProjectCard
-                imgPath={axon}
-                isBlog={false}
-                title="Axon"
-                description="The axon project is a single page application developted for Axon content. The tecnologies used to this project is the classic triad HTML, CSS and JavaScript. I used slickerJs with Jquery to make the mobile carrousel to."
-                ghLink="https://github.com/IagoMartins12/Axon"
-                demoLink="https://iagomartins12.github.io/Axon/"
-              />
-            </Col>
-
-            <Col md={4} className="project-card">
-              <ProjectCard
                 imgPath={spaceX}
                 isBlog={false}
                 title="SpaceX"
@@ -49,10 +38,21 @@ function Projects() {
 
             <Col md={4} className="project-card">
               <ProjectCard
+                imgPath={hoobank}
+                isBlog={false}
+                title="HooBank"
+                description="Hoobank is a landing page project created using Next.js, React, and Tailwind CSS. It features a sleek design and responsive layout, combining the power of Next.js for serverless rendering, React for dynamic components, and Tailwind CSS for efficient styling."
+                ghLink="https://github.com/IagoMartins12/LandingPage"
+                demoLink="https://iago-martins-hoobank.vercel.app/"
+              />
+            </Col>
+
+            <Col md={4} className="project-card">
+              <ProjectCard
                 imgPath={metaversus}
                 isBlog={false}
                 title="Metaversus"
-                description="Metaversus is a JavaScript-based application application based on Meta page. The application was developed using Tailwind, React, Next.js, and Framer-motion to build 3D animations."
+                description="Metaversus is an JavaScript-based application centered around the concept of Meta page. This dynamic application was developed using Tailwind, React, Next.js, and Framer-motion to build 3D animations."
                 ghLink="https://github.com/IagoMartins12/Metaverse"
                 demoLink="https://metaversus-iagomartins.vercel.app/"
               />
@@ -63,7 +63,7 @@ function Projects() {
                 imgPath={iagoflix}
                 isBlog={false}
                 title="Iagoflix"
-                description="Iagoflix is a full-stack application based on Netflix that allows users to browse and stream a variety of cinematographic works. The application was developed using Postgres, Sequelize, and Node.js for the backend, and SASS, React, Next.js, and Bootstrap for the frontend, and TypeScript for both."
+                description="Iagoflix is a full-stack application based on Netflix that allows users to browse and stream a variety of cinematographic works. The application was developed using Postgres, Sequelize, and Node.js for the backend, and SASS, React, Next.js, and Bootstrap for the frontend, and TypeScript."
                 ghLink="https://github.com/IagoMartins12/iagoflix-front"
                 demoLink="https://iagoflix.vercel.app/"
               />
@@ -82,11 +82,12 @@ function Projects() {
 
             <Col md={4} className="project-card">
               <ProjectCard
-                imgPath={devblog}
+                imgPath={devGenius}
                 isBlog={false}
-                title="DevBlog"
-                description="DevBlog is a blog application developed using NextJS, React, Tailwind, and Typescript. The application provides a modern and responsive user interface, with optimized layouts and styles for various screen sizes. The use of NextJS and React provides efficient rendering and optimized performance."
-                ghLink="https://github.com/IagoMartins12/Airbnb"
+                title="DevGenius"
+                description="DevGenius is a blog and social network application that allows users to comment on articles, favorite/like posts, follow other users, and features a modern layout seamlessly integrated with a dark theme. The application was developed using React, Next.js, Node.js, TypeScript, MongoDB, and Prisma."
+                ghLink="https://github.com/IagoMartins12/DevGenius"
+                demoLink="https://devgenius-blog.vercel.app/"
               />
             </Col>
           </Row>
@@ -102,17 +103,6 @@ function Projects() {
           <Row style={{ justifyContent: 'center', paddingBottom: '10px' }}>
             <Col md={4} className="project-card">
               <ProjectCard
-                imgPath={axon}
-                isBlog={false}
-                title="Axon"
-                description="O projeto Axon é uma aplicação de landing page desenvolvida para a Axon content. As tecnologias usadas neste projeto são a clássica tríade HTML, CSS e JavaScript. Utilizei o SlickerJs com jQuery para criar o carrossel para dispositivos móveis."
-                ghLink="https://github.com/IagoMartins12/Axon"
-                demoLink="https://iagomartins12.github.io/Axon/"
-              />
-            </Col>
-
-            <Col md={4} className="project-card">
-              <ProjectCard
                 imgPath={spaceX}
                 isBlog={false}
                 title="SpaceX"
@@ -124,10 +114,21 @@ function Projects() {
 
             <Col md={4} className="project-card">
               <ProjectCard
+                imgPath={hoobank}
+                isBlog={false}
+                title="HooBank"
+                description="Hoobank é uma landing page criado usando Next.js, React e Tailwind CSS. Possui um design elegante e um layout responsivo, combinando o poder do Next.js para renderização no lado do servidor, React para componentes dinâmicos e Tailwind CSS para estilização eficiente."
+                ghLink="https://github.com/IagoMartins12/Axon"
+                demoLink="https://iagomartins12.github.io/Axon/"
+              />
+            </Col>
+
+            <Col md={4} className="project-card">
+              <ProjectCard
                 imgPath={metaversus}
                 isBlog={false}
                 title="Metaversus"
-                description="Metaversus é uma aplicação baseada em JavaScript, inspirada na página Meta. A aplicação foi desenvolvida utilizando Tailwind, React, Next.js e Framer-motion para criar animações 3D."
+                description="Metaversus é uma aplicação baseada em JavaScript, centralizada no conceito da página Meta. A aplicação foi desenvolvida utilizando Tailwind, React, Next.js e Framer-motion para criar animações 3D."
                 ghLink="https://github.com/IagoMartins12/Metaverse"
                 demoLink="https://metaversus-iagomartins.vercel.app/"
               />
@@ -157,11 +158,12 @@ function Projects() {
 
             <Col md={4} className="project-card">
               <ProjectCard
-                imgPath={devblog}
+                imgPath={devGenius}
                 isBlog={false}
-                title="DevBlog"
-                description="DevBlog é uma aplicação de blog/rede social, que está sendo desenvolvida usando NextJS, Node, React, Tailwind e Typescript. A aplicação oferece uma interface de usuário moderna e responsiva, com layouts e estilos otimizados para vários tamanhos de tela."
-                ghLink="https://github.com/IagoMartins12/Airbnb"
+                title="DevGenius"
+                description="DevGenius é uma aplicação de blog e rede social, que permite aos usuarios comentar nos artigos, favoritar/curtir o post, seguir outros usuarios, e possui um layout moderno, integrado com o dark theme. A aplicação foi desenvolvida utilizando React, NextJs, Node, TypeScript, Mongodb e Prisma."
+                ghLink="https://github.com/IagoMartins12/DevGenius"
+                demoLink="https://devgenius-blog.vercel.app/"
               />
             </Col>
           </Row>
