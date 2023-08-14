@@ -1,15 +1,15 @@
-import React, { useState, useEffect } from "react";
-import { Container, Row } from "react-bootstrap";
-import Button from "react-bootstrap/Button";
-import Particle from "../Particle";
-import pdf from "../../Assets/curriculo.pdf";
-import { AiOutlineDownload } from "react-icons/ai";
-import { Document, Page, pdfjs } from "react-pdf";
-import "react-pdf/dist/esm/Page/AnnotationLayer.css";
+import React, { useState, useEffect } from 'react';
+import { Container, Row } from 'react-bootstrap';
+import Button from 'react-bootstrap/Button';
+import Particle from '../Particle';
+import pdf from '../../Assets/curriculo.pdf';
+import { AiOutlineDownload } from 'react-icons/ai';
+import { Document, Page, pdfjs } from 'react-pdf';
+import 'react-pdf/dist/esm/Page/AnnotationLayer.css';
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
 
 const resumeLink =
- "https://raw.githubusercontent.com/IagoMartins12/Portfolio/master/src/Assets/Portfólio.pdf";
+  'https://raw.githubusercontent.com/IagoMartins12/Portfolio/master/src/Assets/Portfólio.pdf';
 
 function ResumeNew() {
   const [width, setWidth] = useState(1200);
@@ -22,12 +22,12 @@ function ResumeNew() {
     <div>
       <Container fluid className="resume-section">
         <Particle />
-        <Row style={{ justifyContent: "center", position: "relative" }}>
+        <Row style={{ justifyContent: 'center', position: 'relative' }}>
           <Button
             variant="primary"
             href={pdf}
             target="_blank"
-            style={{ maxWidth: "250px" }}
+            style={{ maxWidth: '250px' }}
           >
             <AiOutlineDownload />
             &nbsp;Download CV
@@ -40,12 +40,12 @@ function ResumeNew() {
           </Document>
         </Row>
 
-        <Row style={{ justifyContent: "center", position: "relative" }}>
+        <Row style={{ justifyContent: 'center', position: 'relative' }}>
           <Button
             variant="primary"
             href={pdf}
             target="_blank"
-            style={{ maxWidth: "250px" }}
+            style={{ maxWidth: '250px' }}
           >
             <AiOutlineDownload />
             &nbsp;Download CV
