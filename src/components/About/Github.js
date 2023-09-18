@@ -7,7 +7,7 @@ function Github() {
   const selectLastHalfYear = (contributions) => {
     const currentYear = new Date().getFullYear();
     const currentMonth = new Date().getMonth();
-    const shownMonths = 6;
+    const shownMonths = 7;
 
     return contributions.filter((activity) => {
       const date = new Date(activity.date);

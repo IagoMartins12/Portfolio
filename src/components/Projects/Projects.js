@@ -119,7 +119,7 @@ function Projects() {
                 title="HooBank"
                 description="Hoobank é uma landing page criado usando Next.js, React e Tailwind CSS. Possui um design elegante e um layout responsivo, combinando o poder do Next.js para renderização no lado do servidor, React para componentes dinâmicos e Tailwind CSS para estilização eficiente."
                 ghLink="https://github.com/IagoMartins12/Axon"
-                demoLink="https://iagomartins12.github.io/Axon/"
+                demoLink="https://iago-martins-hoobank.vercel.app/"
               />
             </Col>
 
@@ -128,7 +128,7 @@ function Projects() {
                 imgPath={metaversus}
                 isBlog={false}
                 title="Metaversus"
-                description="Metaversus é uma aplicação baseada em JavaScript, centralizada no conceito da página Meta. A aplicação foi desenvolvida utilizando Tailwind, React, Next.js e Framer-motion para criar animações 3D."
+                description="Metaversus é uma aplicação criada em JavaScript, inspirada no conceito da página Meta. A aplicação foi desenvolvida utilizando Tailwind, React, Next.js e Framer-motion para criar animações 3D."
                 ghLink="https://github.com/IagoMartins12/Metaverse"
                 demoLink="https://metaversus-iagomartins.vercel.app/"
               />
