@@ -72,7 +72,7 @@ function AboutCard() {
             </ul>
 
             <p style={{ color: 'rgb(155 126 172)' }}>
-              "Inspire to code the future and shape a better tomorrow!."{' '}
+              "Inspire para codificar o futuro e moldar um amanhã melhor!."{' '}
             </p>
             <footer className="blockquote-footer">Iago</footer>
           </blockquote>

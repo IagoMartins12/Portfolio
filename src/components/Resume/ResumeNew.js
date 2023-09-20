@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Container, Row } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Particle from '../Particle';
-import pdf from '../../Assets/curriculo.pdf';
+import portfolioPTBR from '../../Assets/PortfólioAtt.pdf';
+import portfolioEN from '../../Assets/PortfólioIngles.pdf';
 import { AiOutlineDownload } from 'react-icons/ai';
 import { Document, Page, pdfjs } from 'react-pdf';
 import 'react-pdf/dist/esm/Page/AnnotationLayer.css';
@@ -31,7 +32,7 @@ function ResumeNew() {
         <Row style={{ justifyContent: 'center', position: 'relative' }}>
           <Button
             variant="primary"
-            href={pdf}
+            href={language.isEnglish ? portfolioEN : portfolioPTBR}
             target="_blank"
             style={{ maxWidth: '250px' }}
           >
@@ -52,7 +53,7 @@ function ResumeNew() {
         <Row style={{ justifyContent: 'center', position: 'relative' }}>
           <Button
             variant="primary"
-            href={pdf}
+            href={language.isEnglish ? portfolioEN : portfolioPTBR}
             target="_blank"
             style={{ maxWidth: '250px' }}
           >

@@ -14,6 +14,8 @@ import {
 } from 'react-icons/ai';
 
 import { CgFileDocument } from 'react-icons/cg';
+import { ImBlog } from 'react-icons/im';
+
 import ToogleButton from './ToogleButton/ToogleButton';
 import useLanguageContext from '../Context/Language/LanguageContext';
 
@@ -121,15 +123,15 @@ function NavBar() {
               </Nav.Link>
             </Nav.Item>
 
-            {/* <Nav.Item>
+            <Nav.Item>
               <Nav.Link
-                href="https://soumyajitblogs.vercel.app/"
+                href="https://devgenius-blog.vercel.app/"
                 target="_blank"
                 rel="noreferrer"
               >
-                <ImBlog style={{ marginBottom: "2px" }} /> Blogs
+                <ImBlog style={{ marginBottom: '2px' }} /> Blog
               </Nav.Link>
-            </Nav.Item> */}
+            </Nav.Item>
 
             <Nav.Item className="fork-btn">
               <Button
