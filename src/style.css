@@ -598,6 +598,7 @@ button:focus {
 @media (max-width: 767px) {
   .about-img {
     padding-top: 0 !important;
+    display: none;
   }
 }
 /* --------- */

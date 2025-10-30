@@ -127,7 +127,31 @@ function About() {
       </Container>
 
       {/* Timeline Section */}
-      <Timeline />
+      <div>
+        {language.isEnglish ? (
+          <>
+            <h1 style={{ fontSize: '2.1em' }}>
+              My <strong className="purple">Journey</strong>
+            </h1>
+            <p style={{ fontSize: '15px', marginBottom: '20px' }}>
+              A timeline of my professional evolution — from academic training
+              to my current job in full-stack development.
+            </p>
+          </>
+        ) : (
+          <>
+            <h1 style={{ fontSize: '2.1em' }}>
+              Minha <strong className="purple">Jornada</strong>
+            </h1>
+            <p style={{ fontSize: '15px', marginBottom: '20px' }}>
+              Uma linha do tempo da minha evolução profissional — da formação
+              acadêmica até o trabalho atual com desenvolvimento full-stack.
+            </p>
+          </>
+        )}
+
+        <Timeline />
+      </div>
 
       {/* Tech Stack */}
       <Container>

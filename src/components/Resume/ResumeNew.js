@@ -40,9 +40,9 @@ function ResumeNew() {
   const getScale = () => {
     if (width > 1600) return 1.8; // telas ultrawide
     if (width > 1200) return 1.6; // desktops grandes
-    if (width > 992) return 1.4; // notebooks
+    if (width > 992) return 1.5; // notebooks
     if (width > 768) return 1.2; // tablets
-    return 0.75; // celulares
+    return 0.7; // celulares
   };
 
   return (
@@ -72,6 +72,8 @@ function ResumeNew() {
             justifyContent: 'center',
             marginTop: '40px',
             marginBottom: '20px',
+            position: 'relative',
+            zIndex: 5, // 👈 força o botão acima das partículas
           }}
         >
           <Button
@@ -85,6 +87,8 @@ function ResumeNew() {
               alignItems: 'center',
               gap: '8px',
               fontWeight: 500,
+              zIndex: 10, // 👈 reforça camada acima
+              position: 'relative',
             }}
           >
             <AiOutlineDownload size={20} />
@@ -126,7 +130,6 @@ function ResumeNew() {
                   style={{
                     color: '#c770f0',
                     textAlign: 'center',
-                    marginTop: '100px',
                     fontWeight: 500,
                   }}
                 >
@@ -137,15 +140,15 @@ function ResumeNew() {
               }
             >
               <motion.div
-                whileHover={{ scale: 1.02 }}
+                whileHover={{ scale: 1.01 }}
                 transition={{ duration: 0.3 }}
                 style={{ display: 'flex', justifyContent: 'center' }}
               >
                 <Page
                   pageNumber={1}
                   scale={getScale()}
-                  renderTextLayer={false}
-                  renderAnnotationLayer={false}
+                  renderTextLayer={true}
+                  renderAnnotationLayer={true}
                 />
               </motion.div>
             </Document>
