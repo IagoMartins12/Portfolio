@@ -11,26 +11,28 @@ function Type() {
         <Typewriter
           options={{
             strings: [
-              'Fullstack Developer',
-              'Software Enginner',
-              'Tecnology Enthusiast',
+              'Full-Stack Developer',
+              'Building Scalable Web Apps',
+              'Node.js, React & Next.js Enthusiast',
+              'Passionate About DevOps and Clean Code',
             ],
             autoStart: true,
             loop: true,
-            deleteSpeed: 50,
+            deleteSpeed: 40,
           }}
         />
       ) : (
         <Typewriter
           options={{
             strings: [
-              'Desenvolvedor FullStack',
-              'Engenheiro de Software',
-              'Entusiasta da Tecnologia',
+              'Desenvolvedor Full-Stack',
+              'Criando Aplicações Web Escaláveis',
+              'Entusiasta de Node.js, React e Next.js',
+              'Apaixonado por DevOps e Clean Code',
             ],
             autoStart: true,
             loop: true,
-            deleteSpeed: 50,
+            deleteSpeed: 40,
           }}
         />
       )}

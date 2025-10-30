@@ -1,7 +1,7 @@
 import { create } from 'zustand';
 
 const useLanguageContext = create((set) => ({
-  isEnglish: true,
+  isEnglish: false,
   toggleLanguage: () => set((state) => ({ isEnglish: !state.isEnglish })),
 }));
 

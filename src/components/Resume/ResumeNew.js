@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Container, Row } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Particle from '../Particle';
-import portfolioPTBR from '../../Assets/PortfólioAtt.pdf';
-import portfolioEN from '../../Assets/PortfólioIngles.pdf';
+import portfolioPTBR from '../../Assets/curriculo.pdf';
+import portfolioEN from '../../Assets/resume.pdf';
 import { AiOutlineDownload } from 'react-icons/ai';
 import { Document, Page, pdfjs } from 'react-pdf';
 import 'react-pdf/dist/esm/Page/AnnotationLayer.css';
@@ -11,10 +11,10 @@ import useLanguageContext from '../../Context/Language/LanguageContext';
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
 
 const resumeLinkEnglish =
-  'https://raw.githubusercontent.com/IagoMartins12/Portfolio2/main/src/Assets/Portf%C3%B3lioIngles.pdf';
+  'https://raw.githubusercontent.com/IagoMartins12/Portfolio2/main/src/Assets/resume.pdf';
 
 const resumeLink =
-  'https://raw.githubusercontent.com/IagoMartins12/Portfolio2/main/src/Assets/Portf%C3%B3lioAtt.pdf';
+  'https://raw.githubusercontent.com/IagoMartins12/Portfolio2/main/src/Assets/curriculo.pdf';
 
 function ResumeNew() {
   const [width, setWidth] = useState(1200);

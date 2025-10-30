@@ -4,196 +4,193 @@ import myImg from '../../Assets/avatar.svg';
 import Tilt from 'react-parallax-tilt';
 import { AiFillGithub, AiFillInstagram } from 'react-icons/ai';
 import { FaLinkedinIn } from 'react-icons/fa';
+import { motion } from 'framer-motion';
 import useLanguageContext from '../../Context/Language/LanguageContext';
 
 function Home2() {
   const language = useLanguageContext();
 
+  const fadeUp = {
+    hidden: { opacity: 0, y: 50 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.7, ease: 'easeOut' },
+    },
+  };
+
+  const fadeZoom = {
+    hidden: { opacity: 0, scale: 0.85 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: { duration: 0.9, ease: 'easeOut' },
+    },
+  };
+
   return (
     <Container fluid className="home-about-section" id="about">
-      {language.isEnglish ? (
-        <Container>
-          <Row>
-            <Col md={8} className="home-about-description">
-              <h1 style={{ fontSize: '2.6em' }}>
-                LET ME <span className="purple"> INTRODUCE </span> MYSELF
-              </h1>
-              <p className="home-about-body">
-                I am a Software enginner with abilit to learn and collaborate in
-                rapidly changing environments and compositions.
-                <br />
-                <br />I am fluent in
-                <i>
-                  <b className="purple"> MERN stack </b> and also have some
-                  experience in{' '}
-                  <i>
-                    <b className="purple"> C# and PHP </b>
-                  </i>
-                </i>
-                <br />
-                <br />
-                My field of Interest's are building new &nbsp;
-                <i>
-                  <b className="purple">Web Technologies and Products </b> and
-                  also in areas related to{' '}
-                  <b className="purple">Robust Systems</b>
-                </i>
-                <br />
-                <br />
-                Whenever possible, I apply my passion for developing products
-                with <b className="purple">Node.js</b> and
-                <i>
-                  <b className="purple">
-                    {' '}
-                    Modern Javascript Library and Frameworks
-                  </b>
-                </i>
-                &nbsp; like
-                <i>
-                  <b className="purple"> React.js and Next.js</b>
-                </i>
-              </p>
-            </Col>
-            <Col md={4} className="myAvtar">
+      <Container>
+        <Row>
+          <Col md={8} className="home-about-description">
+            <motion.h1
+              style={{ fontSize: '2.6em' }}
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+            >
+              {language.isEnglish ? (
+                <>
+                  LET ME <span className="purple"> INTRODUCE </span> MYSELF
+                </>
+              ) : (
+                <>
+                  DEIXE-ME <span className="purple"> APRESENTAR-ME </span>
+                </>
+              )}
+            </motion.h1>
+
+            <motion.p
+              className="home-about-body"
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="visible"
+              transition={{ delay: 0.2 }}
+              viewport={{ once: true }}
+            >
+              {language.isEnglish ? (
+                <>
+                  I’m a <b className="purple">Full-Stack Developer</b> based in
+                  São Paulo, passionate about creating <b>scalable</b> and{' '}
+                  <b>high-performance web applications</b> that blend clean
+                  architecture with exceptional user experience.
+                  <br />
+                  <br />
+                  Skilled in <b>React</b>, <b>Next.js</b>, and <b>Node.js</b>,
+                  with strong focus on efficient systems, API integrations, and{' '}
+                  <b>Docker</b> automation under <b>DevOps</b> principles.
+                  <br />
+                  <br />
+                  Currently at <b>PMovil LTDA</b> and founder of{' '}
+                  <b>Opus Atlas</b>, an educational ecosystem combining{' '}
+                  <b>AI, music, and interactive learning</b>.
+                  <br />
+                  <br />I believe technology should scale beautifully and make a
+                  real impact — code can be elegant and powerful at once.
+                </>
+              ) : (
+                <>
+                  Sou um <b className="purple">Desenvolvedor Full-Stack</b> de
+                  São Paulo, apaixonado por criar{' '}
+                  <b>aplicações web escaláveis</b> e <b>de alto desempenho</b>,
+                  unindo arquitetura limpa e uma experiência de usuário
+                  excepcional.
+                  <br />
+                  <br />
+                  Tenho experiência sólida com <b>React</b>, <b>Next.js</b> e{' '}
+                  <b>Node.js</b>, atuando no design de sistemas eficientes,
+                  integração de APIs e automação de deploys com <b>Docker</b> e
+                  práticas de <b>DevOps</b>.
+                  <br />
+                  <br />
+                  Atualmente trabalho na <b>PMovil LTDA</b> e sou fundador do{' '}
+                  <b>Opus Atlas</b> — um ecossistema educacional que une{' '}
+                  <b>IA, música e aprendizado interativo</b>.
+                  <br />
+                  <br />
+                  Acredito que um bom código deve ser tão elegante quanto
+                  eficiente — tecnologia com propósito real.
+                </>
+              )}
+            </motion.p>
+          </Col>
+
+          <Col md={4} className="myAvtar">
+            <motion.div
+              variants={fadeZoom}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              transition={{ delay: 0.4 }}
+            >
               <Tilt>
-                <img src={myImg} className="img-fluid" alt="avatar" />
+                <img
+                  src={myImg}
+                  className="img-fluid"
+                  alt="Iago Martins Avatar"
+                  loading="lazy"
+                  style={{
+                    filter: 'drop-shadow(0 0 25px rgba(199, 112, 240, 0.5))',
+                  }}
+                />
               </Tilt>
-            </Col>
-          </Row>
+            </motion.div>
+          </Col>
+        </Row>
+
+        <motion.div
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          transition={{ delay: 0.6 }}
+          viewport={{ once: true }}
+        >
           <Row>
             <Col md={12} className="home-about-social">
-              <h1>FIND ME ON</h1>
+              <h1>
+                {language.isEnglish ? 'FIND ME ONLINE' : 'ENCONTRE-ME ONLINE'}
+              </h1>
               <p>
-                Feel free to <span className="purple">connect </span>with me
+                {language.isEnglish ? (
+                  <>
+                    Feel free to <span className="purple">connect</span> with me
+                  </>
+                ) : (
+                  <>
+                    Sinta-se à vontade para{' '}
+                    <span className="purple">conectar-se</span> comigo
+                  </>
+                )}
               </p>
               <ul className="home-about-social-links">
-                <li className="social-icons">
-                  <a
-                    href="https://github.com/IagoMartins12"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="icon-colour  home-social-icons"
+                {[
+                  {
+                    href: 'https://github.com/IagoMartins12',
+                    icon: <AiFillGithub />,
+                  },
+                  {
+                    href: 'https://www.linkedin.com/in/iago-martins01/',
+                    icon: <FaLinkedinIn />,
+                  },
+                  {
+                    href: 'https://www.instagram.com/iago_martins1',
+                    icon: <AiFillInstagram />,
+                  },
+                ].map((link, i) => (
+                  <motion.li
+                    key={i}
+                    className="social-icons"
+                    whileHover={{ scale: 1.2, rotate: 3 }}
+                    transition={{ type: 'spring', stiffness: 300 }}
                   >
-                    <AiFillGithub />
-                  </a>
-                </li>
-                <li className="social-icons">
-                  <a
-                    href="https://www.linkedin.com/in/iago-martins-313838213/"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="icon-colour  home-social-icons"
-                  >
-                    <FaLinkedinIn />
-                  </a>
-                </li>
-                <li className="social-icons">
-                  <a
-                    href="https://www.instagram.com/iago_martins1"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="icon-colour home-social-icons"
-                  >
-                    <AiFillInstagram />
-                  </a>
-                </li>
+                    <a
+                      href={link.href}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="icon-colour home-social-icons"
+                    >
+                      {link.icon}
+                    </a>
+                  </motion.li>
+                ))}
               </ul>
             </Col>
           </Row>
-        </Container>
-      ) : (
-        <Container>
-          <Row>
-            <Col md={8} className="home-about-description">
-              <h1 style={{ fontSize: '2.6em' }}>
-                DEIXE-ME <span className="purple"> ME APRESENTAR </span>
-              </h1>
-              <p className="home-about-body">
-                Sou um engenheiro de software com facilidade em aprender e
-                colaborar em ambientes e composições em constante mudança.
-                <br />
-                <br />
-                Sou fluente em
-                <i>
-                  <b className="purple"> MERN stack </b> e também tenho
-                  experiência em{' '}
-                  <i>
-                    <b className="purple"> C# e PHP </b>
-                  </i>
-                </i>
-                <br />
-                <br />
-                Meus campos de interesses são &nbsp;
-                <i>
-                  <b className="purple"> Tecnologias e Produtos Web </b> e
-                  também em áreas relacionadas a{' '}
-                  <b className="purple">Sistemas Robustos</b>
-                </i>
-                <br />
-                <br />
-                Sempre que possível, aplico minha paixão por desenvolver
-                produtos com <b className="purple">Node.js</b> e{' '}
-                <i>
-                  <b className="purple">
-                    Bibliotecas e Frameworks JavaScript Modernos
-                  </b>
-                </i>
-                &nbsp;como
-                <i>
-                  <b className="purple">Nest.js e Next.js </b>
-                </i>
-              </p>
-            </Col>
-            <Col md={4} className="myAvtar">
-              <Tilt>
-                <img src={myImg} className="img-fluid" alt="avatar" />
-              </Tilt>
-            </Col>
-          </Row>
-          <Row>
-            <Col md={12} className="home-about-social">
-              <h1>ENCONTRE-ME NAS REDES SOCIAIS</h1>
-              <p>
-                Sinta-se à vontade para{' '}
-                <span className="purple">conectar-se</span> comigo
-              </p>
-              <ul className="home-about-social-links">
-                <li className="social-icons">
-                  <a
-                    href="https://github.com/IagoMartins12"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="icon-colour  home-social-icons"
-                  >
-                    <AiFillGithub />
-                  </a>
-                </li>
-                <li className="social-icons">
-                  <a
-                    href="https://www.linkedin.com/in/iago-martins-313838213/"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="icon-colour  home-social-icons"
-                  >
-                    <FaLinkedinIn />
-                  </a>
-                </li>
-                <li className="social-icons">
-                  <a
-                    href="https://www.instagram.com/iago_martins1"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="icon-colour home-social-icons"
-                  >
-                    <AiFillInstagram />
-                  </a>
-                </li>
-              </ul>
-            </Col>
-          </Row>
-        </Container>
-      )}
+        </motion.div>
+      </Container>
     </Container>
   );
 }
+
 export default Home2;

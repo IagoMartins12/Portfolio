@@ -506,14 +506,16 @@ button:focus {
 
 .card-img-top {
   padding: 20px !important;
-  opacity: 0.8 !important;
   border-radius: 10px !important;
+  min-height: 35%;
+  max-height: 35%;
 }
 
 .blog-img {
   padding: 0px !important;
-  opacity: 0.8 !important;
   border-radius: 0px !important;
+  min-height: 35%;
+  max-height: 35%;
 }
 
 .btn-primary {
@@ -888,4 +890,118 @@ button:focus {
   opacity: 1;
   -webkit-transform: none;
   transform: none;
+}
+
+/* Featured Badge Styles */
+.featured-badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+  color: #1a1a1a;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.85em;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  z-index: 10;
+  box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
+  animation: pulse-star 2s ease-in-out infinite;
+}
+
+.featured-badge svg {
+  font-size: 0.9em;
+}
+
+@keyframes pulse-star {
+  0%,
+  100% {
+    transform: scale(1);
+    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(255, 215, 0, 0.6);
+  }
+}
+
+/* Project Year Styles */
+.project-year {
+  margin-bottom: 10px;
+  font-size: 0.95em;
+  font-weight: 500;
+}
+
+/* Tech Stack Styles */
+.project-tech-stack {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  padding: 12px;
+  background: rgba(138, 43, 226, 0.1);
+  border-left: 3px solid #8a2be2;
+  border-radius: 5px;
+}
+
+.project-tech-stack strong {
+  display: block;
+  margin-bottom: 10px;
+}
+
+/* Tech Icons Container */
+.tech-icons-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+
+.tech-icon-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1.5px solid rgba(200, 137, 230, 0.3);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.tech-icon-item svg {
+  font-size: 1.5em;
+  transition: transform 0.3s ease;
+}
+
+.tech-icon-item:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(200, 137, 230, 0.6);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(138, 43, 226, 0.3);
+}
+
+.tech-icon-item:hover svg {
+  transform: scale(1.1);
+}
+
+@media (max-width: 767px) {
+  .tech-icons-container {
+    gap: 8px;
+  }
+
+  .tech-icon-item {
+    width: 35px;
+    height: 35px;
+  }
+
+  .tech-icon-item svg {
+    font-size: 1.3em;
+  }
+
+  .featured-badge {
+    font-size: 0.75em;
+    padding: 5px 10px;
+  }
 }
