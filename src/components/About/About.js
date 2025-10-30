@@ -26,7 +26,7 @@ function About() {
       <Container>
         <Row style={{ justifyContent: 'center', padding: '10px' }}>
           <Col
-            md={7}
+            md={9}
             style={{
               justifyContent: 'center',
               paddingTop: '30px',
@@ -108,7 +108,7 @@ function About() {
             </motion.p>
           </Col>
 
-          <Col
+          {/* <Col
             md={5}
             style={{ paddingTop: '100px', paddingBottom: '50px' }}
             className="about-img"
@@ -122,7 +122,7 @@ function About() {
               viewport={{ once: true }}
               transition={{ duration: 0.8, ease: 'easeOut' }}
             />
-          </Col>
+          </Col> */}
         </Row>
       </Container>
 

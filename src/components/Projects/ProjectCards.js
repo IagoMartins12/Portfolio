@@ -26,20 +26,18 @@ function ProjectCards(props) {
 
   const fadeUp = {
     hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6, ease: 'easeOut' },
-    },
+    visible: { opacity: 1, y: 0 },
   };
 
   return (
     <motion.div
-      whileHover={{
-        boxShadow: '0 10px 25px rgba(199, 112, 240, 0.3)',
-      }}
+      whileHover={{ boxShadow: '0 10px 25px rgba(199, 112, 240, 0.3)' }}
       transition={{ type: 'spring', stiffness: 150 }}
       style={{ height: '100%' }}
+      variants={fadeUp}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.2 }}
     >
       <Card
         className="project-card-view"
@@ -61,19 +59,17 @@ function ProjectCards(props) {
         )}
 
         {/* Imagem */}
-        <motion.div variants={fadeUp} initial="hidden" animate="visible">
-          <Card.Img
-            src={props.imgPath}
-            alt="card-img"
-            style={{
-              borderBottom: '1px solid rgba(199,112,240,0.15)',
-              height: '220px',
-              objectFit: 'cover',
-            }}
-          />
-        </motion.div>
+        <Card.Img
+          src={props.imgPath}
+          alt="card-img"
+          style={{
+            borderBottom: '1px solid rgba(199,112,240,0.15)',
+            height: '220px',
+            objectFit: 'cover',
+          }}
+        />
 
-        {/* Corpo do Card */}
+        {/* Corpo */}
         <Card.Body
           style={{
             display: 'flex',
@@ -83,52 +79,46 @@ function ProjectCards(props) {
           }}
         >
           <div style={{ flexGrow: 1 }}>
-            <motion.div variants={fadeUp} initial="hidden" animate="visible">
-              <Card.Title
-                style={{
-                  fontSize: '1.25rem',
-                  fontWeight: '600',
-                  color: '#fff',
-                  marginBottom: '0.5rem',
-                }}
-              >
-                {props.title}
-              </Card.Title>
+            <Card.Title
+              style={{
+                fontSize: '1.25rem',
+                fontWeight: '600',
+                color: '#fff',
+                marginBottom: '0.5rem',
+              }}
+            >
+              {props.title}
+            </Card.Title>
 
-              {props.year && (
-                <div
-                  style={{
-                    color: '#c770f0',
-                    fontWeight: 500,
-                    fontSize: '0.9rem',
-                    marginBottom: '1rem',
-                  }}
-                >
-                  {props.year}
-                </div>
-              )}
-
-              <Card.Text
+            {props.year && (
+              <div
                 style={{
-                  textAlign: 'justify',
-                  color: '#dcdcdc',
+                  color: '#c770f0',
+                  fontWeight: 500,
                   fontSize: '0.9rem',
-                  lineHeight: '1.5',
+                  marginBottom: '1rem',
                 }}
               >
-                {props.description}
-              </Card.Text>
-            </motion.div>
+                {props.year}
+              </div>
+            )}
+
+            <Card.Text
+              style={{
+                textAlign: 'justify',
+                color: '#dcdcdc',
+                fontSize: '0.9rem',
+                lineHeight: '1.5',
+              }}
+            >
+              {props.description}
+            </Card.Text>
           </div>
 
-          {/* Stack e Botões ficam fixos no final */}
+          {/* Stack + Botões */}
           <div style={{ marginTop: 'auto' }}>
             {techStack.length > 0 && (
-              <motion.div
-                variants={fadeUp}
-                initial="hidden"
-                animate="visible"
-                transition={{ delay: 0.1 }}
+              <div
                 style={{
                   marginTop: '20px',
                   padding: '15px',
@@ -158,15 +148,13 @@ function ProjectCards(props) {
                   {techStack.map((tech, index) => {
                     const IconComponent = tech.icon;
                     return (
-                      <motion.div
+                      <div
                         key={index}
-                        transition={{ duration: 0.2 }}
                         style={{
                           display: 'flex',
                           flexDirection: 'column',
                           alignItems: 'center',
                           gap: '4px',
-                          position: 'relative',
                         }}
                       >
                         <div
@@ -179,26 +167,20 @@ function ProjectCards(props) {
                             background: tech.bg || 'rgba(255, 255, 255, 0.05)',
                             border: '1.5px solid rgba(200, 137, 230, 0.3)',
                             borderRadius: '8px',
-                            cursor: 'pointer',
-                            transition: 'all 0.3s ease',
                           }}
                         >
                           <IconComponent
                             style={{ fontSize: '1.5em', color: tech.color }}
                           />
                         </div>
-                      </motion.div>
+                      </div>
                     );
                   })}
                 </div>
-              </motion.div>
+              </div>
             )}
 
-            <motion.div
-              variants={fadeUp}
-              initial="hidden"
-              animate="visible"
-              transition={{ delay: 0.2 }}
+            <div
               style={{
                 marginTop: '20px',
                 display: 'flex',
@@ -212,34 +194,22 @@ function ProjectCards(props) {
                   variant="primary"
                   href={props.ghLink}
                   target="_blank"
-                  style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '6px',
-                    padding: '8px 16px',
-                  }}
+                  rel="noreferrer"
                 >
-                  <BsGithub />
-                  {props.isBlog ? 'Blog' : 'GitHub'}
+                  <BsGithub /> GitHub
                 </Button>
               )}
-              {!props.isBlog && props.demoLink && (
+              {props.demoLink && (
                 <Button
                   variant="primary"
                   href={props.demoLink}
                   target="_blank"
-                  style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '6px',
-                    padding: '8px 16px',
-                  }}
+                  rel="noreferrer"
                 >
-                  <CgWebsite />
-                  Demo
+                  <CgWebsite /> Demo
                 </Button>
               )}
-            </motion.div>
+            </div>
           </div>
         </Card.Body>
       </Card>

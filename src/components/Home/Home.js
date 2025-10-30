@@ -78,7 +78,13 @@ function Home() {
               </motion.h1>
 
               <motion.div
-                style={{ padding: 50, textAlign: 'left' }}
+                style={{
+                  paddingTop: 30,
+                  paddingBottom: 30,
+                  paddingLeft: 45,
+                  paddingRight: 15,
+                  textAlign: 'left',
+                }}
                 variants={fadeUp}
                 initial="hidden"
                 animate="visible"

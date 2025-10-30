@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
-import { motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 import ProjectCard from './ProjectCards';
 import Particle from '../Particle';
 import useLanguageContext from '../../Context/Language/LanguageContext';
@@ -21,12 +21,9 @@ function Projects() {
 
   // ---- motion variants ----
   const fadeUp = {
-    hidden: { opacity: 0, y: 40 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6, ease: 'easeOut' },
-    },
+    hidden: { opacity: 0, y: 24 },
+    visible: { opacity: 1, y: 0 },
+    exit: { opacity: 0, y: 24 },
   };
 
   const stagger = {
@@ -174,7 +171,7 @@ function Projects() {
         imgPath: opusAtlas,
       },
       {
-        title: 'Opus Atlas Blog',
+        title: 'Blog do Opus Atlas',
         description:
           'Extensão editorial do ecossistema Opus Atlas, unindo história, curiosidade e análise musical em um só ambiente. O blog oferece uma experiência completa de leitura, oferecendo notícias de música clássica, biografias de compositores, cobertura de concertos e comparações de gravações. Com interação e suporte a leitura por voz, sistema de comentários com respostas aninhadas, salvamento de artigos, categorias dinâmicas e painel administrativo avançado. Desenvolvido com Next.js e TypeScript, integra Prisma, MongoDB, NextAuth, Redis e um editor de texto rico personalizado. Toda a aplicação é orquestrada em containers Docker com proxy Nginx, garantindo desempenho, segurança e uma experiência editorial contínua e fluida.',
 
@@ -296,35 +293,33 @@ function Projects() {
     selectedFilter === 'all'
       ? currentProjects
       : currentProjects.filter((project) => {
-          if (selectedFilter === 'fullstack') {
-            return (
-              project.category === 'fullstack' ||
-              project.category === 'frontend' ||
-              project.category === 'backend' ||
-              project.category.includes('fullstack')
-            );
+          // garante compatibilidade com string ou array
+          const categories = Array.isArray(project.category)
+            ? project.category
+            : [project.category];
+
+          switch (selectedFilter) {
+            case 'fullstack':
+              return categories.includes('fullstack');
+
+            case 'frontend':
+              return (
+                categories.includes('frontend') ||
+                categories.includes('fullstack')
+              );
+
+            case 'backend':
+              return (
+                categories.includes('backend') ||
+                categories.includes('fullstack')
+              );
+
+            case 'mobile':
+              return categories.includes('mobile');
+
+            default:
+              return true;
           }
-          if (selectedFilter === 'frontend') {
-            return (
-              project.category === 'frontend' ||
-              project.category === 'fullstack' ||
-              project.category.includes('fullstack')
-            );
-          }
-          if (selectedFilter === 'backend') {
-            return (
-              project.category === 'backend' ||
-              project.category === 'fullstack' ||
-              project.category.includes('fullstack')
-            );
-          }
-          if (selectedFilter === 'mobile') {
-            return (
-              project.category === 'mobile' ||
-              project.category.includes('mobile')
-            );
-          }
-          return project.category === selectedFilter;
         });
 
   const filterButtons = [
@@ -396,10 +391,8 @@ function Projects() {
                     ? 'linear-gradient(135deg, #c770f0 0%, #8a2be2 100%)'
                     : 'rgba(199, 112, 240, 0.1)',
                 color: 'white',
-                border:
-                  selectedFilter === button.id
-                    ? 'none'
-                    : '1px solid rgba(199, 112, 240, 0.3)',
+                border: '1px solid rgba(199, 112, 240, 0.3)',
+                zIndex: '9999',
                 borderRadius: '25px',
                 cursor: 'pointer',
                 fontSize: '0.95em',
@@ -424,18 +417,27 @@ function Projects() {
           viewport={{ once: true }}
         >
           <Row style={{ justifyContent: 'center', paddingBottom: '10px' }}>
-            {filteredProjects.map((project, index) => (
-              <Col md={4} className="project-card" key={index}>
-                <motion.div
-                  variants={fadeUp}
-                  whileHover={{
-                    transition: { duration: 0.3, ease: 'easeOut' },
-                  }}
+            <AnimatePresence mode="popLayout">
+              {filteredProjects.map((project, index) => (
+                <Col
+                  md={4}
+                  className="project-card"
+                  key={`${project.title}-${index}`}
                 >
-                  <ProjectCard {...project} />
-                </motion.div>
-              </Col>
-            ))}
+                  <motion.div
+                    layout
+                    variants={fadeUp}
+                    initial="hidden"
+                    animate="visible"
+                    exit="exit"
+                    transition={{ duration: 0.35, ease: 'easeOut' }}
+                    whileHover={{ y: -4, scale: 1.01 }}
+                  >
+                    <ProjectCard {...project} />
+                  </motion.div>
+                </Col>
+              ))}
+            </AnimatePresence>
           </Row>
         </motion.div>
       </Container>
